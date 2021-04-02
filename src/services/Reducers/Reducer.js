@@ -1,4 +1,4 @@
-import { Add_To_Cart } from '../Constant';
+import { Add_To_Cart, Remove_To_Cart } from '../Constant';
 
 // Since, here we defined that 2-parameter that we need inside below function "cardItems()"
 //  "initialState" is user defined variable.
@@ -25,7 +25,7 @@ export default function CardItems(state = [], action) {
 
     /*  Here, we match type on which we apply "switch" condition. */
     switch (action.type) {
-        // below "Add_To_Cart" comes from Action.js => 'type'.
+        // below "Add_To_Cart, Remove_To_cart" comes from Action.js => 'type'.
         //    but this "Add_To_Cart" is comes from '../Constants' i.e.: "Add_To_Cart" string.
         case Add_To_Cart:
 
@@ -44,7 +44,13 @@ export default function CardItems(state = [], action) {
                 // to getting multiple o/p we need to make 'cardData' as object 
                 { cardData: action.data }
             ]
-            break;
+        // break;
+        case Remove_To_Cart:
+            state.pop();
+            return [
+                ...state
+            ]
+        // break;
 
         // If not anr above "case" is matched then 'bydefault'  "default"  case is going to run.
         default:

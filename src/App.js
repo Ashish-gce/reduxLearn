@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css'
+import HeaderContainer from './Containers/HeaderContainer';
 
 //  In Redux, <Home /> Component is not using directly in our project
 //  We use this from "Container" ( i.e.: responsible for 'connection' b/w "Components" and "Services ") folder
@@ -19,6 +20,7 @@ import HomeContainer from './Containers/HomeContainer';
 function App() {
   return (
     <div className="App">
+      <HeaderContainer />
       <HomeContainer />
     </div>
   );

@@ -1,4 +1,4 @@
-import { Add_To_Cart } from '../Constant';
+import { Add_To_Cart, Remove_To_Cart } from '../Constant';
 
 // below constant function is CALL to the button for addToCart
 export const addToCart = (data) => {
@@ -19,9 +19,9 @@ export const addToCart = (data) => {
 };
 
 
-// export const removeToCart = (data) => {
-//     return {
-//         type: 'remove_To_Cart',
-//         data: data
-//     };
-// };
+export const removeToCart = () => {
+    // console.warn("action");
+    return {
+        type: Remove_To_Cart,
+    };
+};

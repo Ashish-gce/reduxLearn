@@ -32,14 +32,14 @@
 .text-wrapper{
   margin-top: 1%;
 }
-.btn-wrapper button{
+ button{
   background-color: red;
   border: 0px;
   padding: 10px;
   border-radius: 5px;
   color: #fff;
   box-shadow: #333 0px 1px 5px;
-  margin-top: 18%;
+  margin-top: 5%;
 }
 .img-wrapper img{
   width: 100px;
@@ -80,6 +80,11 @@
   height: 1.4rem;
   border-radius: 50%;
   color: #fff; 
+}
+.remove-Cart{
+  background-color: purple;
+  margin-top: 5px;
+
 }
 
 /*  */

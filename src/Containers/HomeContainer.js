@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 // here we import "Action.js"
 // here we're importing "addToCart" from "Action.js"
-import { addToCart } from '../services/Actions/Action';
+import { addToCart, removeToCart } from '../services/Actions/Action';
 
 // V. V. Imp. 
 //  In Redux, <Home /> Component is not using directly in our project
@@ -31,7 +31,8 @@ const mapDispatchToProps = dispatch => ({
 
     // since, addToCart(data) is function that pass data.
     // therefor, "addToCartHandler()" is a function, that calls from react Component that contains a "data" as a parameter and  'addToCart(data)' action
-    addToCartHandler: data => dispatch(addToCart(data))
+    addToCartHandler: data => dispatch(addToCart(data)),
+    removeToCartHandler: data => dispatch(removeToCart(data))
 })
 
 

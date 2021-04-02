@@ -20,17 +20,11 @@ function Home(props) {
 
     //  i.e.:  "addToCartHandler"
 
-    console.log("Home", props.data)
+    // console.log("Home", props)
 
 
     return (
         <>
-            <div className="add-to-cart">
-
-                {/* this simply show the length of the data (number of product's) that we're added in shopping cart */}
-                <span className="cartCount">{props.data.length}</span>
-                <AddShoppingCartIcon style={iconSize} />
-            </div>
             <h2>Home Component</h2>
             <div className="cart-wrapper">
                 <div className="img-wrapper item">
@@ -44,12 +38,18 @@ function Home(props) {
                         Price: $1000.00
                 </span>
                 </div>
-                <div className="btn-wrapper item">
+                <div className="item">
                     <button
                         onClick={() =>
                             props.addToCartHandler({ price: "$1000.00", name: "Samsung-S20" })
                         }>
                         Add to cart
+                    </button>
+                    <button className="remove-Cart"
+                        onClick={() =>
+                            props.removeToCartHandler()
+                        }>
+                        Remove to cart
                     </button>
                 </div>
             </div>
