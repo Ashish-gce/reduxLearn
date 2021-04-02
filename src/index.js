@@ -2,16 +2,37 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+// 
+
+// "createStore" to helps in the  'Redux "store"'  creation
+import { createStore } from 'redux';
+// "Provider" helps in flow of  "Redux" data in entire application
+import { Provider } from 'react-redux';
+import RootReducer from './services/Reducers/RootReducer';
+
+// By the help of 'RootReducer' we're going to create a "STORE" (that contains entire data of our application)
+// since, "store" is a userDefined variable.
+const store = createStore(RootReducer)
+
+// Below line prints all possible things of store.
+//  since, below is "store" so, it prints all the things that present in 'store'
+// console.log("store data", store);
+
+// console.log() returns outpt-
+// dispatch: ƒ dispatch(action)
+// getState: ƒ getState()
+// replaceReducer: ƒ replaceReducer(nextReducer)
+// subscribe: ƒ subscribe(listener)
+// Symbol(observable): ƒ observable()
+
+// 
 
 ReactDOM.render(
-  <React.StrictMode>
+
+  // here, {store} comes from userDefined const 'store' 
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
